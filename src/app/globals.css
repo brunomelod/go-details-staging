@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+html[data-theme="dark"],
+html:not([data-theme]) {
+  --page: #0a0a0a;
+  --elevated: #111111;
+  --card: #141414;
+  --foreground: #f5f5f5;
+  --muted: #a1a1aa;
+  --border: rgb(255 255 255 / 0.12);
+  --header-bg: rgb(0 0 0 / 0.35);
+  --accent: #f7c602;
+  --accent-fg: #0a0a0a;
+  --input-bg: rgb(0 0 0 / 0.4);
+  --hero-overlay: rgb(0 0 0 / 0.72);
+}
+
+html[data-theme="light"] {
+  --page: #f4f4f5;
+  --elevated: #ffffff;
+  --card: #ffffff;
+  --foreground: #18181b;
+  --muted: #52525b;
+  --border: rgb(0 0 0 / 0.1);
+  --header-bg: rgb(255 255 255 / 0.92);
+  --accent: #e6b800;
+  --accent-fg: #18181b;
+  --input-bg: #fafafa;
+  --hero-overlay: rgb(0 0 0 / 0.55);
+}
+
+@theme inline {
+  --color-page: var(--page);
+  --color-elevated: var(--elevated);
+  --color-card: var(--card);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-accent: var(--accent);
+  --color-accent-fg: var(--accent-fg);
+  --font-sans: var(--font-inter);
+}
+
+body {
+  background: var(--page);
+  color: var(--foreground);
+  font-family: var(--font-inter), system-ui, sans-serif;
+}
+
+@keyframes marquee-left {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes marquee-right {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes marquee-up {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes marquee-down {
+  from {
+    transform: translateY(-50%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+.marquee-left {
+  animation: marquee-left linear infinite;
+}
+
+.marquee-right {
+  animation: marquee-right linear infinite;
+}
+
+.marquee-up {
+  animation: marquee-up linear infinite;
+}
+
+.marquee-down {
+  animation: marquee-down linear infinite;
+}
